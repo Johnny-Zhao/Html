@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>觉唯设计</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script type="text/javascript">
+    	function changeColor1(){
+    		var login = document.getElementById("login");
+    		login.style.color="#8E8A85";
+    	}
+    	function changeColor2(){
+    		var login = document.getElementById("login");
+    		login.style.color="#DFDCCF";
+    	}
+    	function changeColor3(){
+    		var register = document.getElementById("register");
+    		register.style.color="#8E8A85";
+    	}
+    	function changeColor4(){
+    		var register = document.getElementById("register");
+    		register.style.color="#DFDCCF";
+    	}
+    </script>
+    <!-- myfocus焦点图制作 -->
+	<script type="text/javascript" src="scripts/myfocus-2.0.1.min.js"></script>
+	<script type="text/javascript" src="scripts/mf-pattern/mF_fancy.js"></script>
+	<link rel="stylesheet" type="text/css" href="scripts/mf-pattern/mF_fancy.css">
+	<script type="text/javascript" src="scripts/rolltop.js"></script>
+	<style type="text/css">
+	#rollBtn {width:40px; height:40px; position:fixed; right:65px; bottom:10px;display: none; background:url(images/top_bg.png) no-repeat left top;}
+	#rollBtn:hover {background:url(images/top_bg.png) no-repeat 0 -39px;}
+	</style>
+	<script type="text/javascript">
+	myFocus.set({
+		id:'picBox'
+	})
+	</script>
+	<script type="text/javascript" src="scripts/float.js"></script>
+</head>
+<body>
+	<div class="top">
+		<div class="top_navigator">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+			<div class="navigator">
+				<ul>
+					<li><a href="javascript:;">文章</a></li>
+					<li><a href="javascript:;">欣赏</a></li>
+					<li><a href="javascript:;">素材</a></li>
+					<li><a href="javascript:;">兑换</a></li>
+					<li><a href="javascript:;">活动</a></li>
+					<li><a href="javascript:;">唯然</a></li>
+					<li><a href="javascript:;">更多</a>
+						<ul>
+							<li><a href="javascript:;">关于觉唯</a></li>
+							<li><a href="javascript:;">留言联系</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="search">
+				<input type="text" name="search">
+			</div>
+			<div class="login">
+				<form action="" method="post">
+					<input type="button" name="login" value="登录" id="login" onmousemove="changeColor1()" onmouseout="changeColor2()">
+				</form>
+			</div>
+			<div class="register">
+				<form action="" method="post">
+					<input type="button" name="register" value="注册" id="register" onmousemove="changeColor3()" onmouseout="changeColor4()">
+				</form>
+			</div>
+		</div><!-- 顶部导航栏结束 -->
+		<div class="slogan">
+			<h4>热爱生活 享受乐趣</h2>
+			<p>Love life and enjoy the fun.</p>
+		</div>
+	</div><!-- 整个顶部结束 -->
+	<div class="newFunction" >
+		<ul>
+			<li><a href="javascript:;">热爱热爱热爱热爱</a></li>
+			<li><a href="javascript:;">生活生活生活生活</a></li>
+			<li><a href="javascript:;">享受享受享受享受</a></li>
+			<li><a href="javascript:;">乐趣乐趣乐趣乐趣</a></li>
+			<li><a href="javascript:;">funfunfunfunfun</a></li>
+		</ul>
+	</div><!-- 新功能结束 -->
+	<div class="ads">
+		<div class="ad" id="picBox">
+			<div class="loading"><img src="images/loading.gif" alt="图片加载中"></div>
+			<div class="pic">
+				<ul>
+					<li><img src="images/ad2.jpg"></li>
+					<li><img src="images/ad3.jpg"></li>
+					<li><img src="images/ad4.jpg"></li>
+				</ul>
+			</div>
+		</div><!-- ad结束 -->
+<!-- 		<div class="adtwo">
+			<img src="images/kedaya.jpg">
+			<img src="images/pikaqiu.jpg">
+		</div>	 -->
+	</div><!-- ads结束 -->
+	<div class="content">
+		<ul>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image" id="content_image">
+						<img src="images/bg_1.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_2.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_3.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_3.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_4.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_3.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_3.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_6.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_4.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_5.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_6.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="content_wrap">
+					<div class="content_image">
+						<img src="images/bg_5.jpg">
+						<div class="img_bottom">
+							<p>学会二维小动画，只需十分钟！</p>
+						</div>
+					</div>
+					<div class="content_bottom">
+						<p>2017-6-24</p>
+						<div class="zan">
+							<input type="button" name="love">
+							<input type="button" name="talk">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>	
+	</div>
+	<div class="page">
+		
+	</div>
+
+	<div>
+		<a href="javascript:;" id="rollBtn" title="回到顶部"></a>
+	</div>
+
+	<div class="special_design bg-blur">
+		<div>
+			<ul id="first_design">
+				<li><a href="javascript:;"><img src="images/backg_1.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_3.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_2.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_1.jpg"></a></li>
+			</ul>
+			<ul>
+				<li><a href="javascript:;"><img src="images/backg_4.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_2.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_4.jpg"></a></li>
+				<li><a href="javascript:;"><img src="images/backg_3.jpg"></a></li>
+			</ul>
+		</div>
+		<div class="inspiration">
+			<a href="javascript:;">取悦于灵感 - Love Inspiration</a>
+		</div>
+	</div>
+	<div class="model">
+		<ul>
+			<li>
+				<img src="images/tips1.jpg">
+				<h3>探索发现</h3>
+				<p>探索创造性的思维，发现引领最新的设计潮流</p>
+			</li>
+			<li>
+				<img src="images/tips2.jpg">
+				<h3>用户设计</h3>
+				<p>以用户为中心，以体验为至上，以细节为成败</p>
+			</li>
+			<li>
+				<img src="images/tips3.jpg">
+				<h3>情感传递</h3>
+				<p>不只是图文信息，更多的是喜怒哀乐的情感</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
