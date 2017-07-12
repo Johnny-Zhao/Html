@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<!-- 包含头部信息用于适应不同设备 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Random Quote Generator</title>
+
+	<link href="styles/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,600,700,800" rel="stylesheet">
+</head>
+
+<body onload="newQuote();">
+	<div class="container fill">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6" id="quote-display">
+				<div class="text-center">
+					<!-- The Quote Begins Here -->
+					<!-- XS Version 针对于手机端屏幕或者小屏幕-->
+					<h3><span id="quote-xs" class="text-center hidden-sm hidden-md hidden-lg"></span></h3>
+					<h4 class="text-center"><span id="author-xs" class="hidden-sm hidden-md hidden-lg"></span></h4>
+					<!-- For Regular Sized Screens 正常屏幕尺寸大小-->
+					<h3><span id="quote" class="text-center hidden-xs"></span></h3>
+					<h4 class="text-right"><span id="author" class="hidden-xs"></span></h4>
+				</div>
+				<div class="row">
+					<div class="col-xs-4 text-center">
+						<button class="btn btn-default btn-md" onclick="newQuote();" id="newButton">
+							<i class="fa fa-refresh hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">New Quote</span></button>
+						</button>
+					</div>
+					<div class="col-xs-4"></div>
+					<div class="col-xs-4 text-center">
+						<button class="btn btn-default btn-md tweet">
+							<i class="fa fa-twitter hidden-sm hidden-md hidden-lg"></i><span class="hidden-xs">Tweet This</span></button>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<p class="text-center">Developed by <a href="https://github.com/Johnny-Zhao">Johnny-Zhao</a></p>
+				<p class="text-center">If you enjoyed using it, consider <a href="PayPal.Me/pmatheson">getting me a coffee</a>.</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous">
+	</script>
+
+</body>
+</html>
