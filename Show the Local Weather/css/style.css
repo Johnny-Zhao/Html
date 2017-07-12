@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.content{
+	margin: 60px auto;
+	text-align: center;
+}
+
+.content h2{
+	margin: 20px 0; 
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.content span{
+	display: block;
+	margin-top: 20px;
+}
+
+.content span:last-child{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.future{
+	text-align: center;
+}
+
+.future h3{
+	padding-bottom: 20px;
+}
