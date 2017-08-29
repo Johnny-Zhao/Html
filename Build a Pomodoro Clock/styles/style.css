@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body{
+  background-color: #333333;
+  width: 100%;
+  height: auto;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  color: #FFF;
+  font-size: 17px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.timeLength button{
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  background-color: #333333;
+  border: none;
+  color:#FFFFFF;
+  outline: none;
+  cursor: pointer;
+}
+
+.timeLength span{
+  font-size: 32px;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.clock_border{
+  width: 300px;
+  height: 300px;
+  border:2px solid #99CC00;
+  margin-top: 25px;
+  border-radius: 300px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 99;
+}
+
+.clock{
+  width: 288px;
+  height: 288px;
+  border-radius: 300px;
+  cursor: pointer;
+  background-color: #99CC00;
+  position: absolute;
+  left: 4px;
+  top:4px;
+  overflow: hidden;
+}
+
+.mask{
+  width: 288px;
+  height: 288px;
+  background-color: #333333;
+  position: relative;
+  top:0;
+  z-index: 100;
+}
+
+.clock p{
+  font-size: 40px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -84px;
+  z-index: 101;
+}
+
+.clock span{
+  font-size: 50px;
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  margin-left: -29px;
+  z-index: 101;
+}
