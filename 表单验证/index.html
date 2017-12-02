@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 140px;
+        }
+
+        label.error {
+            margin-left: 10px;
+            color: red;
+        }
+
+        input, button {
+            font-size: 18px;
+            line-height: 18px;
+            border: 1px solid #999;
+            min-width: 180px;
+        }
+
+        input.error {
+            border: 1px solid red;
+        }
+
+        input[type=submit], button {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="demoForm">
+    <fieldset>
+        <legend>用户登录</legend>
+        <p id="info"></p>
+        <p id="info2" style="display: none">输入错误</p>
+        <p>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username"/>
+        </p>
+
+        <p>
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password"/>
+        </p>
+
+        <p>
+            <label for="confirm-password">确认密码</label>
+            <input type="password" id="confirm-password" name="confirm-password"/>
+        </p>
+
+        <p>
+            <button id="check">检查表单</button>
+        </p>
+        <p>
+            <input type="submit" value="登录"/>
+        </p>
+    </fieldset>
+</form>
+</body>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript" src="jquery.validate-1.13.1.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#demoForm").validate({
+            debug:true,
+            rules:{
+                //此处的username为输入框的name属性，而非id
+                username:{
+                    required:true,
+                    minlength:2,
+                    maxlength:10,
+                    //remote:"remote.json",//远程校验，验证用户名是否已存在数据库
+                    remote:{
+                        url:"remote.json",
+                        type:"post",
+                        data:{
+                            loginTime:function(){
+                                return + new Date;
+                            }
+                        }
+                    }
+                },
+                password:{
+                    required:true,
+                    minlength:6,
+                    maxlength:16
+                }
+            },
+            messages:{
+                username:{
+                    required:"必须填写用户名",
+                    minlength:"用户名最少为两个字符",
+                    maxlength:"用户名最多为⑩个字符",
+                    remote:"用户名不存在"
+                },
+                password:{
+                    required:"必须填写密码",
+                    minlength:"密码最少为6个字符",
+                    maxlength:"密码最多为16个字符"
+                }
+            }
+        })
+    })
+</script>
+</html>

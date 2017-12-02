@@ -1,0 +1,44 @@
+由于a标签属于内联元素，无高度和宽度属性，因此控制鼠标经过状态改变背景颜色时，仅在有文字的地方显示背景颜色。解决的办法是把a标签变为块级元素，display:block
+text-indent: 2em;段落缩进两字符
+text-indent用来规定文本块中首行文本的缩进，但是px是绝对单位，20px不一定正好是两个字符，而em是相对单位，1em的大小是当前1个字体的大小，因此2em正好是两个字符。另提示：text-indent的值允许负值，因此如果想隐藏某个div中的文字可以这样写text-indent:-9999px.
+
+不难发现，id、class、tag都可以通过原生的方法获取到对应的节点，但是我们还需要考虑一个兼容性的问题，我这里顺便提及一下，比如:
+
+IE会将注释节点实现为元素，所以在IE中调用getElementsByTagName里面会包含注释节点，这个通常是不应该的
+getElementById的参数在IE8及较低的版本不区分大小写
+IE7及较低的版本中，表单元素中，如果表单A的name属性名用了另一个元素B的ID名并且A在B之前，那么getElementById会选中A
+IE8及较低的版本，浏览器不支持getElementsByClassName
+
+$( "parent > child" ) 
+子选择器：选择所有指定“parent”元素中指定的"child"的直接子元素。
+
+$("ancestor descendant")	
+后代选择器：选择给定的祖先元素的所有后代元素, 一个元素的后代可能是该元素的一个孩子，孙子，曾孙等
+
+$("prev + next")
+相邻兄弟选择器：选择所有紧接在“prev”元素后的“next”元素
+
+$("prev ~ siblings")
+一般兄弟选择器：匹配“prev”元素之后的所有 兄弟元素。具有相同的父元素，并匹配过滤“siblings”选择器
+
+this，表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。
+$(this),代表的上下文对象是一个jquery的上下文对象，可以调用jQuery的方法和属性值。
+
+获取Attribute就需要用attr，获取Property就需要用prop
+
+.text()结果返回一个字符串，包含所有匹配元素的合并文本
+
+
+.html与.text的异同:
+.html与.text的方法操作是一样，只是在具体针对处理对象不同
+.html处理的是元素内容，.text处理的是文本内容
+.html只能使用在HTML文档中，.text 在XML 和 HTML 文档中都能使用
+如果处理的对象只有一个子文本节点，那么html处理的结果与text是一样的
+火狐不支持innerText属性，用了类似的textContent属性，.text()方法综合了2个属性的支持，所以可以兼容所有浏览器
+
+这里总结下内部操作四个方法的区别：
+
+append()向每个匹配的元素内部追加内容
+prepend()向每个匹配的元素内部前置内容
+appendTo()把所有匹配的元素追加到另一个指定元素的集合中
+prependTo()把所有匹配的元素前置到另一个指定的元素集合中

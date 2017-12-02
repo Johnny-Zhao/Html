@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #dddddd;
+        }
+        .w{
+            margin: 0 auto;
+            width: 980px;
+        }
+        .pg-header{
+            background-color: black;
+            color: white;
+            height: 48px;
+        }
+        .pg-body .menu{
+            position: absolute;
+            left: 200px;
+            width: 180px;
+            background-color: white;
+            float: left;
+        }
+        li {
+            list-style-type: none;
+        }
+        .pg-body .menu .active{
+            background-color: #425a66;
+            color: white;
+        }
+        .pg-body .fixed{
+            position: fixed;
+            top: 10px;
+        }
+        .pg-body .content{
+            position: absolute;
+            left: 385px;
+            right: 200px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .content .item{
+            height: 900px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="pg-header">
+        <div class="w"></div>
+    </div>
+    <div class="pg-body">
+        <div id="menu" class="menu">
+            <ul>
+                <li menu="funcOne">第一章</li>
+                <li menu="funcTwo">第二章</li>
+                <li menu="funcStree">第三章</li>
+                <li menu="func">第4章</li>
+                <li menu="fun">第5章</li>
+            </ul>
+        </div>
+        <div id="content" class="content">
+            <div class="item" con="funcOne" style="background-color: #369;">床前明月管</div>
+            <div class="item" con="funcStree" style="height: 100px;background-color: #852;">我是郭德纲</div>
+            <div class="item" con="funcTwo" style="background-color: #963;">疑是地上霜</div>
+            <div class="item" con="funcStree" style="height: 100px;background-color: #852;">我是郭德纲</div>
+            <div class="item" con="funcTwo" style="background-color: #963;">疑是地上霜</div>
+        </div>
+    </div>
+
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $('#menu').find('li').eq(0).addClass('active');
+        $(window).scroll(function(){
+            var scrollHeight = $('body').scrollTop();
+            var windowHeight = $(window).height();
+            if(scrollHeight>38){
+                $('#menu').addClass('fixed');
+            }else{
+                $('#menu').removeClass('fixed');
+            }
+            $('.item').each(function(i,domEle){
+                var height = $(domEle).offset().top;
+                if(scrollHeight+windowHeight >= height){
+                    $('#menu').find('li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            })
+        })
+        var $menus = $('#menu').find('li');
+        $menus.each(function(i){
+            $(this).click(function(){
+                var h1 = $('#content').find('.item').eq(i).offset().top;
+                $('html,body').animate({scrollTop:h1},500);
+            })
+        })
+    </script>
+</body>
+</html>

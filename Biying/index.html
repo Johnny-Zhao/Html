@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
+    <title>Bing</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{background-color: #333;}
+        .bg{background-image: url(river.jpg);width: 1328px;height: 690px;margin: 0 auto;position: relative;}
+        .logo{background-image: url(logo.png);width: 107px; height: 53px;float: left;margin: -4px 18px 0 0;}
+        form{float: left;background-color: #fff;}
+        .search_input_text{border: 0;float: left;height: 25px;line-height: 25px;outline: none;font-size: 18px;width: 350px;padding: 5px;font-family: "微软雅黑";}
+        .search_input_button{border: 0;background-image: url(search-button.png); width: 29px;height:29px;float: left;margin-top: 3px;margin-right: 3px;}
+        .search_box{position: absolute;top:200px;left: 300px;}
+        .suggest{width: 388px;background-color: #fff;border: 1px solid #999;}
+        .suggest ul{list-style-type: none;}
+        .suggest ul li{padding: 3px;font-size: 14px;line-height: 25px;cursor: pointer;}
+        .suggest ul li:hover{text-decoration: underline;background-color: #e5e5e5;}
+    </style>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body>
+    <div class="bg">
+        <div class="search_box">
+            <div class="logo"></div>
+            <form action="" method="" target="_blank" id="search_form">
+                <input type="input" class="search_input_text" id="search_input">
+                <input type="submit" class="search_input_button" value="">
+            </form>
+        </div>
+    </div>
+    <div class="suggest" id="search_suggest" style="display: none;">
+        <ul id="search_result">
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('#search_input').bind('keyup',function(){
+           var searchText = $('#search_input').val();
+            // $.get('http://api.bing.com/qsonhs.aspx?q='+searchText,function(d){
+            //     var d = d.AS.Results[0].Suggests;
+            //     var html = '';
+            //     for (var i = 0; i < d.length; i++) {
+            //         html += '<li>'+d[i].Txt+'</li>';
+            //     }
+            //     $('search_result').html(html);
+            //     $('#search_suggest').show().css({
+            //     top:$('#search_form').offset().top+$('#search_form').height(),
+            //     left:$('#search_form').offset().left,
+            //     position:'absolute'
+            // });
+            // },'json') 
+
+            //跨域调用
+            $.ajax({
+                url: 'http://api.bing.com/qsonhs.aspx?type=cb&cb=jsonpcallback&q=' + searchText,
+                dataType: "jsonp"
+            });
+            $('#search_suggest').show().css({
+               top:$('#search_form').offset().top+$('#search_form').height(),
+               left:$('#search_form').offset().left,
+               position:'absolute'
+           });
+        });
+
+        //回调函数
+        function jsonpcallback(data) {
+            var data = data.AS.Results[0].Suggests;
+            var html = "";
+            $(data).each(function(index, value) {
+                html += "<li>" + value.Txt + "</li>";
+            });
+            $('#search_result').html(html);
+        };
+
+        $(document).bind('click',function(){
+            $('#search_suggest').hide();
+        });
+
+        //事件代理
+        $(document).delegate('li','click',function(){
+            var keyword = $(this).text();
+            location.href = 'http:cn.bing.com/search?q='+keyword;
+        })
+        
+    </script>
+</body>
+</html>

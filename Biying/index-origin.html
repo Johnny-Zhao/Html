@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
+    <title>Bing</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{background-color: #333;}
+        .bg{background-image: url(river.jpg);width: 1328px;height: 690px;margin: 0 auto;position: relative;}
+        .logo{background-image: url(logo.png);width: 107px; height: 53px;float: left;margin: -4px 18px 0 0;}
+        form{float: left;background-color: #fff;}
+        .search_input_text{border: 0;float: left;height: 25px;line-height: 25px;outline: none;font-size: 18px;width: 350px;padding: 5px;font-family: "微软雅黑";}
+        .search_input_button{border: 0;background-image: url(search-button.png); width: 29px;height:29px;float: left;margin-top: 3px;margin-right: 3px;}
+        .search_box{position: absolute;top:200px;left: 300px;}
+        .suggest{width: 388px;background-color: #fff;border: 1px solid #999;}
+        .suggest ul{list-style-type: none;}
+        .suggest ul li{padding: 3px;font-size: 14px;line-height: 25px;cursor: pointer;}
+        .suggest ul li:hover{text-decoration: underline;background-color: #e5e5e5;}
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="search_box">
+            <div class="logo"></div>
+            <form action="" method="" target="_blank" id="search_form">
+                <input type="input" class="search_input_text" id="search_input">
+                <input type="submit" class="search_input_button" value="">
+            </form>
+        </div>
+    </div>
+    <div class="suggest" id="search_suggest" style="display: none;">
+        <ul id="search_result">
+            <li>LALALA</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        //获取id
+        var getDOM = function(id){
+            return document.getElementById((id));
+        }
+        //绑定事件&处理浏览器兼容性
+        var addEvent = function(id,event,fn){
+            var el = getDOM(id)||document;
+            //addEventListener适用于非IE浏览器
+            if(el.addEventListener){
+                el.addEventListener(event,fn,false);
+            //attachEvent适用于IE浏览器
+            }else if(el.attachEvent){
+                el.attachEvent('on'+event,fn);
+            }
+        }
+
+        var getElementLeft = function(element){
+            var actualLeft = element.offsetLeft;
+            var current = element.offsetParent;
+            while(current!== null){
+                actualLeft += current.offsetLeft;
+                current = current.offsetParent;
+            }
+            return actualLeft;
+        }
+
+        var getElementTop = function(element){
+            var actualTop = element.offsetTop;
+            var current = element.offsetParent;
+            while(current!== null){
+                actualTop += current.offsetTop;
+                current = current.offsetParent;
+            }
+            return actualTop;
+        }
+
+/*        addEvent('search_input','keyup',function(){
+            getDOM('search_suggest').style.top = getElementTop(getDOM('search_form'))+35+'px';
+            getDOM('search_suggest').style.left = getElementLeft(getDOM('search_form'))+'px';
+            getDOM('search_suggest').style.position = 'absolute';
+            getDOM('search_suggest').style.display = 'block';
+        });*/
+
+        var ajaxGet = function(url,callback){
+            var _xhr = null;
+            if(window.XMLHttpRequest){
+                //非IE浏览器
+                _xhr = new window.XMLHttpRequest();
+            }else if(window.ActiveXObject){
+                //IE浏览器
+                _xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            _xhr.onreadstatechange = function(){
+                if(_xhr.readyState == 4 && _xhr.status ==200){
+                    callback(JSON.parse(_xhr.responseText));
+                }
+            }
+            _xhr.open('get',url,false);
+            _xhr.send(null);
+        }
+
+        addEvent('search_input','keyup',function(){
+            var searchText = getDOM('search_input').value;
+            ajaxGet('http://api.bing.com/qsonhs.aspx?q=' + searchText,function(d){
+                var d = d.AS.Results[0].Suggests;
+                var html = '';
+                for (var i = 0; i < d.length; i++) {
+                    html += '<li>'+d[i].Txt+'</li>';
+                }
+                getDOM('search_result').innerHTML=html;
+                getDOM('search_suggest').style.top = getElementTop(getDOM('search_form'))+37+'px';
+                getDOM('search_suggest').style.left = getElementLeft(getDOM('search_form'))+'px';
+                getDOM('search_suggest').style.position='absolute';
+                getDOM('search_suggest').style.position = 'absolute';
+                getDOM('search_suggest').style.display = 'block';
+            });
+        });
+
+        var delegateEvent = function(target,event,fn){
+            addEvent(document,event,function(e){
+                if(e.target.nodeName == target.toUpperCase()){
+                    fn.call(e.target);
+                }
+            });
+        }
+
+        //回调函数
+        function jsonpcallback(data) {
+            var data = data.AS.Results[0].Suggests;
+            var html = "";
+            $(data).each(function(index, value) {
+                html += "<li>" + value.Txt + "</li>";
+            });
+            $('#search_result').html(html);
+        };
+
+        //事件代理
+        delegateEvent('li','click',function(){
+            var keyword = this.innerHTML;
+            location.href = 'http:cn.bing.com/search?q='+keyword;
+        })
+
+    </script>
+</body>
+</html>
