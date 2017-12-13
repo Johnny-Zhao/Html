@@ -1,0 +1,28 @@
+input[type="checkbox"]{
+            -webkit-appearance: none;
+            border: 1px solid #CFE3EF;
+            background:#FFFFFF;
+            width: .2rem;
+            height: .2rem;
+            display: inline-block;
+            vertical-align: middle;
+            outline: 0 !important;
+            line-height: 20px;
+            color: #d8d8d8;
+        }
+        input[type="checkbox"]:after{  
+            content: "";
+            display:block;
+            width: .2rem;
+            height: .2rem;
+            text-align: center;
+            line-height: .18rem;
+            font-size: .16rem;  
+            background-color: #fff;
+            box-sizing:border-box;
+        }
+        input[type=checkbox]:checked:after  {  
+            background-color: #5CCF7C;
+            content: '\2713';
+            color: #fff;
+        }

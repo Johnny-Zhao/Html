@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3---3D效果</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+</head>
+
+<body>
+    <div class="cube_container">
+        <div class="cube cube1">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube2">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube3">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube4">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube5">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube6">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube7">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="cube cube8">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="demo"></div>
+    <div class="flex_container">
+        <div class="demo1"></div>
+        <div class="demo1"></div>
+        <div class="demo1"></div>
+    </div>
+    <div class="content1">
+      <div class="item1"></div>
+    </div>
+    <div class="ani"></div>
+    <span id="dateTime"></span>
+</body>
+<style>
+.content1{
+  background-color: #486;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.item1{
+  width: 50px;
+  height: 50px;
+  background-color: #753;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.flex_container{
+  display: flex;
+    justify-content: center;
+}
+.move {
+    width: 200px;
+    height: 200px;
+    background-color: #489;
+    position: absolute;
+    cursor: pointer;
+}
+
+div.demo1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #874825;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    padding: 20px;
+    border: 20px dashed #159951;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;/* 纵轴上居中 */
+}
+
+div.demo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: #9c27b0;
+    border: 20px dashed #2196f3;
+}
+
+div.demo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+}
+
+.cube_container {
+    width: 100%;
+    height: 500px;
+    background-color: #468;
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    float: left;
+    left: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(-33.5deg) rotateY(45deg) translate3d(0, 0, 0);
+    transition: transform 1s;
+    transform-origin: right;
+}
+
+.cube ul {
+    width: 100%;
+    /*perspective: 500px; */
+    /*景深*/
+}
+
+.cube ul li {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 0;
+    /*opacity: 0.8;*/
+    /*transition: transform 1s, opacity 1s;*/
+}
+
+.cube ul li:nth-child(1) {
+    transform: translate3d(0px, 0px, -50px);
+    background-color: #36B7EA;
+}
+
+.cube ul li:nth-child(2) {
+    transform: translate3d(0px, 0px, 50px);
+    background-color: #36EA40;
+}
+
+.cube ul li:nth-child(3) {
+    transform: translate3d(50px, 0px, 0px) rotateY(90deg);
+    background-color: #F6F40F;
+}
+
+.cube ul li:nth-child(4) {
+    transform: translate3d(-50px, 0px, 0px) rotateY(90deg);
+    background-color: #F96211;
+}
+
+.cube ul li:nth-child(5) {
+    transform: translate3d(0px, 50px, 0px) rotateX(90deg);
+    background-color: #F92311;
+}
+
+.cube ul li:nth-child(6) {
+    transform: translate3d(0px, -50px, 0px) rotateX(90deg);
+    background-color: #FA68F3;
+}
+
+
+
+
+/*.cube:hover ul {
+    transform: rotateX(-33.5deg) rotateY(-135deg);
+} */
+
+.cube_container:hover .cube1 {
+    transform: translate3d(600px, 120px, 0px) rotateX(10deg) rotateY(-5deg) rotateZ(-45deg);
+}
+
+@-webkit-keyframes cube_turn {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 0.4;
+        transform: translate3d(600px, 120px, 0px) rotateX(10deg) rotateY(-5deg) rotateZ(-45deg);
+    }
+}
+
+@keyframes cube_turn {
+    from {
+        opacity: 0.8;
+        transform: rotateX(-33.5deg) rotateY(45deg) translate3d(0, 0, 0);
+    }
+    to {
+        opacity: 0.4;
+        transform: translate3d(600px, 120px, 0px) rotateX(10deg) rotateY(-5deg) rotateZ(-45deg);
+    }
+}
+</style>
+<style>
+.ani {
+    width: 480px;
+    height: 320px;
+    margin: 50px auto;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    background-size: cover;
+    background-position: center;
+    -webkit-animation-name: "loops";
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes "loops" {
+    0% {
+        background: url(http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg) no-repeat;
+    }
+    25% {
+        background: url(http://b.hiphotos.baidu.com/image/w%3D400/sign=edee1572e9f81a4c2632edc9e72b6029/30adcbef76094b364d72bceba1cc7cd98c109dd0.jpg) no-repeat;
+    }
+    50% {
+        background: url(http://b.hiphotos.baidu.com/image/w%3D400/sign=937dace2552c11dfded1be2353266255/d8f9d72a6059252d258e7605369b033b5bb5b912.jpg) no-repeat;
+    }
+    75% {
+        background: url(http://g.hiphotos.baidu.com/image/w%3D400/sign=7d37500b8544ebf86d71653fe9f9d736/0df431adcbef76095d61f0972cdda3cc7cd99e4b.jpg) no-repeat;
+    }
+    100% {
+        background: url(http://c.hiphotos.baidu.com/image/w%3D400/sign=cfb239ceb0fb43161a1f7b7a10a54642/3b87e950352ac65ce2e73f76f9f2b21192138ad1.jpg) no-repeat;
+    }
+}
+</style>
+
+</html>

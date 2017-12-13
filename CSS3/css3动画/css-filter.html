@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3---filter</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>王奕凯</h1>
+    </div>
+</body>
+<script>
+window.onload = function() {
+    var h = document.querySelector('h1');
+    var time = null;
+    var content = ['大帅比', '我就问', '还有谁'];
+
+    function intervalFor(time, arr) {
+        var index = 0;
+        setTimeout(function() {
+            h.innerHTML = arr[index];
+            index++;
+            if (index < arr.length) {
+                setTimeout(arguments.callee, time);
+            } else {
+                index = 0;
+                setTimeout(arguments.callee, time);
+            }
+        }, time);
+    }
+
+    intervalFor(2000, content);
+}
+
+function siblings(elm) {
+    var a = [];
+    var p = elm.parentNode.children;
+    for (var i = 0, pl = p.length; i < pl; i++) {
+        if (p[i] !== elm) a.push(p[i]);
+    }
+    return a;
+}
+</script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+html,
+body {
+    background-color: black;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    padding: 2em;
+    -webkit-filter: contrast(20);
+    filter: contrast(20);
+    background-color: black;
+    overflow: hidden;
+}
+
+.container h1 {
+    font-family: Righteous;
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    -webkit-animation: letterspacing 1s infinite alternate ease-in-out;
+    animation: letterspacing 1s infinite alternate ease-in-out;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    letter-spacing: -2.5rem;
+}
+
+@-webkit-keyframes letterspacing {
+    0% {
+        letter-spacing: -2.5rem;
+        -webkit-filter: blur(0.3rem);
+        filter: blur(0.3rem);
+    }
+    50% {
+        -webkit-filter: blur(0.5rem);
+        filter: blur(0.5rem);
+    }
+    100% {
+        letter-spacing: .5rem;
+        -webkit-filter: blur(0rem);
+        filter: blur(0rem);
+        color: #fff;
+    }
+}
+
+@keyframes letterspacing {
+    0% {
+        letter-spacing: -2.2rem;
+        -webkit-filter: blur(0.3rem);
+        filter: blur(0.3rem);
+    }
+    50% {
+        -webkit-filter: blur(0.5rem);
+        filter: blur(0.5rem);
+    }
+    100% {
+        letter-spacing: .5rem;
+        -webkit-filter: blur(0rem);
+        filter: blur(0rem);
+        color: #fff;
+    }
+}
+</style>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3---渐变</title>
+</head>
+<style>
+.btn {
+    margin: 50px auto;
+    width: 200px;
+    line-height: 64px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    background: -webkit-linear-gradient(#024e8a 0%, #2d80c1 50%, #83c7fd 100%);
+    background: linear-gradient(#024e8a 0%, #2d80c1 50%, #83c7fd 100%);
+    background-size: 100% 150%;
+    background-position: 0 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-position: 0 75%;
+}
+</style>
+<style>
+div.demo {
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    margin: 40px auto;
+}
+
+div.demo::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    bottom: -100%;
+    right: -100%;
+    background: -webkit-linear-gradient(45deg, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background: linear-gradient(45deg, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background-size: 100% 100%;
+    -webkit-animation: bgposition 8s infinite linear alternate;
+    animation: bgposition 8s infinite linear alternate;
+    z-index: -1;
+}
+
+@-webkit-keyframes bgposition {
+    0% {
+        -webkit-transform: translate(30%, 30%);
+        transform: translate(30%, 30%);
+    }
+    25% {
+        -webkit-transform: translate(30%, -30%);
+        transform: translate(30%, -30%);
+    }
+    50% {
+        -webkit-transform: translate(-30%, -30%);
+        transform: translate(-30%, -30%);
+    }
+    75% {
+        -webkit-transform: translate(-30%, 30%);
+        transform: translate(-30%, 30%);
+    }
+    100% {
+        -webkit-transform: translate(30%, 30%);
+        transform: translate(30%, 30%);
+    }
+}
+
+@keyframes bgposition {
+    0% {
+        -webkit-transform: translate(30%, 30%);
+        transform: translate(30%, 30%);
+    }
+    25% {
+        -webkit-transform: translate(30%, -30%);
+        transform: translate(30%, -30%);
+    }
+    50% {
+        -webkit-transform: translate(-30%, -30%);
+        transform: translate(-30%, -30%);
+    }
+    75% {
+        -webkit-transform: translate(-30%, 30%);
+        transform: translate(-30%, 30%);
+    }
+    100% {
+        -webkit-transform: translate(30%, 30%);
+        transform: translate(30%, 30%);
+    }
+}
+</style>
+
+<body>
+    <div class="btn">Confirm</div>
+    <div class="demo"></div>
+</body>
+
+</html>
