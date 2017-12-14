@@ -18,7 +18,7 @@
 
 ## UI图
 
-![1.png](./src/assets/images/1.png)![2.png](./src/assets/images/2.png)
-![3.png](./src/assets/images/3.png)![4.png](./src/assets/images/4.png)
-![5.png](./src/assets/images/5.png)![6.png](./src/assets/images/6.png)
-![7.png](./src/assets/images/7.png)![8.png](./src/assets/images/8.png)
+![1.png](./src/assets/images/1.png)    ![2.png](./src/assets/images/2.png)
+![3.png](./src/assets/images/3.png)    ![4.png](./src/assets/images/4.png)
+![5.png](./src/assets/images/5.png)    ![6.png](./src/assets/images/6.png)
+![7.png](./src/assets/images/7.png)
