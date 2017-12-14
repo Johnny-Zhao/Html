@@ -23,7 +23,7 @@
 - Vue-cli
 - Less
 - Axios
-- Mysql
+- Mysql
  
 ## UI图
 
