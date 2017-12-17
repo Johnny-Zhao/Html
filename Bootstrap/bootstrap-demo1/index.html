@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>电子商店</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+    <script src="./scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">电子商务</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">电子商务</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="输入商品名称...">
+                    </div>
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">商品 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">注册</a></li>
+                    <li><a href="#">登录</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <ul class="list-wrap">
+                    <li class="bg-deepBlue">电子产品</li>
+                    <li class="clearfix"><span class="pull-left">手机</span>
+                        <button type="button" class="btn btn-primary pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">笔记本</span>
+                        <button type="button" class="btn btn-success pull-right">34</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">平板</span>
+                        <button type="button" class="btn btn-danger pull-right">4</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">显示器</span>
+                        <button type="button" class="btn btn-info pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">游戏机</span>
+                        <button type="button" class="btn btn-success  pull-right">234</button>
+                    </li>
+                </ul>
+                <ul class="list-wrap">
+                    <li class="bg-deepGreen">智能数码</li>
+                    <li class="clearfix"><span class="pull-left">手环</span>
+                        <button type="button" class="btn btn-danger pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">手表</span>
+                        <button type="button" class="btn btn-success pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">VR眼镜</span>
+                        <button type="button" class="btn btn-info pull-right">234</button>
+                    </li>
+                </ul>
+                <ul class="list-wrap">
+                    <li class="bg-deepBlue">手机配件</li>
+                    <li class="clearfix"><span class="pull-left">耳机</span>
+                        <button type="button" class="btn btn-warning pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">移动电源</span>
+                        <button type="button" class="btn btn-success pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">手机壳</span>
+                        <button type="button" class="btn btn-info pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">数据线</span>
+                        <button type="button" class="btn btn-primary pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">手机支架</span>
+                        <button type="button" class="btn btn-danger pull-right">234</button>
+                    </li>
+                    <li class="clearfix"><span class="pull-left">手机贴膜</span>
+                        <button type="button" class="btn btn-warning pull-right">234</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 column">
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        <li class="active">手机</li>
+                    </ol>
+                    <div class="row clearfix">
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" class="img-responsive center-block" alt="">
+                            <h3>OPPO</h3>
+                            <span class="item-price">1599</span>
+                            <p class="text-primary">OPPO A57 3GB+32GB内存版</p>
+                            <p>黑色 全网通4G手机 双卡双待</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" class="img-responsive center-block" alt="">
+                            <h3>荣耀</h3>
+                            <span class="item-price">1598</span>
+                            <p class="text-primary">荣耀8 3GB+32GB</p>
+                            <p>全网通版 珠光白</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" class="img-responsive center-block" alt="">
+                            <h3>iPhone7</h3>
+                            <span class="item-price">6388</span>
+                            <p class="text-primary">Apple iPhone7 Plus(A1661) 128GB</p>
+                            <p>金色 移动联通电信4G手机</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        <li class="active">笔记本</li>
+                    </ol>
+                    <div class="row clearfix">
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" class="img-responsive center-block" alt="">
+                            <h3>MacBook Air</h3>
+                            <span class="item-price">5988</span>
+                            <p class="text-primary">Apple MacBook Air 13.3英寸笔记本电脑</p>
+                            <p>英寸笔记本电脑</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" class="img-responsive center-block" alt="">
+                            <h3>戴尔DELL灵越</h3>
+                            <span class="item-price">4199</span>
+                            <p class="text-primary">戴尔DELL灵越5565-R2945A 15.6英寸笔记本电脑</p>
+                            <p>灰四核处理器 8G大内存 256SSD</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                        <div class="col-md-4 col-center-block item-list">
+                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" class="img-responsive center-block" alt="">
+                            <h3>联系(Lenovo)拯救者</h3>
+                            <span class="item-price">6599</span>
+                            <p class="text-primary">联系(Lenovo)拯救者</p>
+                            <p>R720 15.6英寸游戏</p>
+                            <button type="button" class="btn btn-success">立即购买</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>@2017| Emall:Info@itbegin.com</p>
+    </footer>
+</body>
+
+</html>

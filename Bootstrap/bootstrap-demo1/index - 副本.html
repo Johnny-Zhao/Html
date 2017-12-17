@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <script>
+    // $(window).bind("load", function() {
+    //     $("#img1").css("height", '100px');
+    // })
+    window.onload = function(){
+        $("#img1").css("visibility", 'visible');
+        $("#img1").css("height", '100px');
+    }
+    </script>
+</head>
+
+<body>
+    <img src="C:/Users/Administrator/Desktop/back01.jpg" id="img1" style="visibility: hidden;">
+    <header>
+        <h1>你好啊，很高兴遇见你</h1>
+    </header>
+</body>
+<script>
+var strInfo = "";
+strInfo += "rn网页可见区域宽:" + document.body.clientWidth;
+strInfo += "rn网页可见区域高:" + document.body.clientHeight;
+strInfo += "rn网页可见区域宽:" + document.body.offsetWidth + "(包括边线的宽)";
+strInfo += "rn网页可见区域高:" + document.body.offsetHeight + "(包括边线的宽)";
+strInfo += "rn网页正文全文宽:" + document.body.scrollWidth;
+strInfo += "rn网页正文全文高:" + document.body.scrollHeight;
+strInfo += "rn网页被卷去的高:" + document.body.scrollTop;
+strInfo += "rn网页被卷去的左:" + document.body.scrollLeft;
+strInfo += "rn网页正文部分上:" + window.screenTop;
+strInfo += "rn网页正文部分左:" + window.screenLeft;
+strInfo += "rn屏幕分辨率的高:" + window.screen.height;
+strInfo += "rn屏幕分辨率的宽:" + window.screen.width;
+strInfo += "rn屏幕可用工作区高度:" + window.screen.availHeight;
+strInfo += "rn屏幕可用工作区宽度:" + window.screen.availWidth;
+console.log(strInfo);
+</script>
+
+
+</html>
