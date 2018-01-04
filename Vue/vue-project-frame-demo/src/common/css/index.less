@@ -1,0 +1,39 @@
+@import "./resize.css";
+@import "./_variate.less";
+@import "./_mixture.less";
+@import "./_argument.less";
+
+//页面的公共样式
+html, body {
+  background-color: @bgMinColor;
+}
+
+.mianContainer {
+  background-color: @secNavBgColor;
+  padding: 0.3rem 0.6rem 0;
+  .mianColor {
+    background-color: @bgMinColor;
+  }
+}
+
+.contentContainer {
+  background-color: @bgMinColor;
+}
+
+div.selectContainer {
+  margin: 0.22rem 0.3rem 0 0.3rem;
+  .searchBox {
+    .borderbox;
+    border: 1px solid @searchBoxBorderColor;
+    background-color: @searchBoxBgColor;
+    padding: 0.28rem;
+    margin-bottom: 0.28rem;
+  }
+}
+
+//修改elementui的样式
+div.el-select {
+  width: 2.61rem;
+  height: 0.44rem;
+}
+
