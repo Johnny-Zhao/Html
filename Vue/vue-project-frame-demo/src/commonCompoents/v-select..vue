@@ -2,14 +2,14 @@
   <div class="select-wrap">
     <div v-if="selectType == 'single'">
       <label>{{ labelText }}</label>
-      <el-select v-model="value" clearable filterable :placeholder="placeholder">
+      <el-select v-model="value" clearable filterable :placeholder="placeholder" @change="getQueryInfo">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
     </div>
     <div v-if="selectType == 'multiple'">
       <label>{{ labelText }}</label>
-      <el-select v-model="value" clearable multiple filterable :placeholder="placeholder">
+      <el-select v-model="value" clearable multiple filterable :placeholder="placeholder" @change="getQueryInfo">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
@@ -21,6 +21,10 @@
         type="date"
         placeholder="选择日期">
       </el-date-picker>
+    </div>
+    <div v-if="selectType == 'text'">
+      <label>{{ labelText }}</label>
+      <input type="text" class="input" v-model="value">
     </div>
   </div>
 </template>
@@ -53,7 +57,18 @@ export default {
       default: () => []
     }
   },
-  methods: {},
+  methods: {
+    getQueryInfo() {
+      if (this.selectType == "date") {
+        // 格式化时间
+        let formadate = common.formmatDate(this.value);
+        this.$emit("getSingleSelectInfo", formadate);
+      } else {
+        this.$emit("getSingleSelectInfo", this.value);
+        console.log(this.value);
+      }
+    }
+  },
   created() {}
 };
 </script>
@@ -87,6 +102,23 @@ export default {
     height: 0.44rem;
     line-height: 0.44rem;
     margin-left: 0.275rem;
+  }
+  .input {
+    width: 2.75rem;
+    height: 0.44rem;
+    box-sizing: border-box;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border: 0.01rem solid #d5d5d5;
+    font-size: 0.16rem;
+    padding: 0rem 0.1rem;
+    border-radius: 0.03rem;
+    display: inline-block;
+    &::focus {
+      border-color: #409eff;
+    }
   }
 }
 </style>
