@@ -32,8 +32,7 @@
             <i @click="closeDialog()">&times;</i>
         </div>
         <div class="panel">
-          <!-- <vue-input value="新交货周期" wrapWidth="75%"></vue-input> -->
-          <!-- <vue-button value="更新" orangeBg="true"></vue-button> -->
+          
         </div>
       </dialog>
     </transition>
