@@ -14,7 +14,7 @@ const error404 = resolve => require(['../base/error404'], resolve);
 const err500 = resolve => require(['../base/error500'], resolve);
 
 //智能分析
-const intelligent_analysis = resolve => require(['../views/componentdemo1'], resolve);//demo页
+const componentdemo1 = resolve => require(['../views/componentdemo1'], resolve);//demo页
 
 const routes = [
   {
